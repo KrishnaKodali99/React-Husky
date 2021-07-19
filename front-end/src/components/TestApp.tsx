@@ -14,7 +14,7 @@ class TestApp extends Component {
     }
 
     cardDets = {
-        image: "https://picsum.photos/200",
+        image: "https://picsum.photos/800",
         title: "My Custom Card",
         body: (<span><h1>This is the body inside h5 tag</h1></span>)
     }
@@ -22,11 +22,14 @@ class TestApp extends Component {
     render():any {
         return(
             <div>
-                <CustomButton action={this.myFunct} caption={"Test Button"} usage={"Success"}></CustomButton>
+                <CustomButton action={this.myFunct} caption={"Test Button"} usage={"Success"}></CustomButton><br />
+                <CustomButton action={this.myFunct} caption={"Test Button 2"} usage={"Fail"}></CustomButton><br />
+                <CustomButton action={this.myFunct} caption={"Test Button 3"} usage={"Success"}></CustomButton>
                 <div className="container">
-                    <CustomCard cardDetails = {this.cardDets} cardOrient="center" />
+                    <CustomCard cardDetails = {this.cardDets} cardOrient="center" background={1}/>
                 </div>
                 <LoginForm loginSubmitHandler={this.myLoginSubmit} />
+                
             </div>
         );
     }

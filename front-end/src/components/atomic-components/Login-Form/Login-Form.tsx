@@ -1,5 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik';
+import CustomButton from '../Button/Button';
+import './Login-Form.css'
 
 const validate = (values:any) => {
     const errors = {
@@ -38,31 +40,31 @@ const LoginForm:React.FC<{loginSubmitHandler:Function}> = ({loginSubmitHandler})
     });
     return (
 
-        <div className="container my-5">
-            <div className="row justify-content-center">
-                <div className="col text-center">
-                    <h1>Login Form</h1>
+        <div className="container py-5 px-3" id="form-container">
+            <div className="row justify-content-center" >
+                <div className="col-10 col-md-9 col-lg-7 col-xl-6 pt-3 text-center" id="form-parent-col" >
+                    <h1 className="pb-3">Login Form</h1>
 
-                    <form onSubmit={formik.handleSubmit} id="loginform">
-                        <div className="row my-3">
-                            <label htmlFor="email">Email Address</label>
-                            <input id="email" name="email" type="email"
+                    <form onSubmit={formik.handleSubmit} id="loginform" >
+                        <div className="row my-3 mx-2">
+                            <label className="col-lg-3" htmlFor="email">Email :</label>
+                            <input id="email" name="email" type="email" className="col-sm-12 col-lg-9"
                                 onChange={formik.handleChange} onBlur={formik.handleBlur}
                                 value={formik.values.email}
                             />
                             {formik.touched.email && formik.errors.email ? (<div>{formik.errors.email}</div>) : null}
                         </div>
                         
-                        <div className="row my-3">
-                            <label htmlFor="password">Password</label>
-                            <input id="password" name="password" type="password"
+                        <div className="row py-2 mx-2">
+                            <label className="col-lg-3" htmlFor="password">Password :</label>
+                            <input id="password" name="password" type="password" className="col-lg-9"
                                 onChange={formik.handleChange} onBlur={formik.handleBlur}
                                 value={formik.values.password}
                             />
                             {formik.touched.password && formik.errors.password ? (<div>{formik.errors.password}</div>) : null}
                         </div>
                         
-                        <button type="submit">Submit</button>
+                        <CustomButton action={()=>{}} caption="Submit" usage="submit" />
                     </form>
                 </div>
             </div>

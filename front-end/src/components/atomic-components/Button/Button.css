@@ -1,0 +1,16 @@
+.btn{
+    color:white;
+}
+
+.btn:hover{
+    color:yellow;
+    font-weight: 600;
+}
+
+.success-background{
+    background-color: #3E7764;
+}
+
+.danger-background{
+    background-color: #A33F44;
+}

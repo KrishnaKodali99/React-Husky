@@ -1,11 +1,11 @@
 import React from 'react';
+import './Card.css';
 
-const CustomCard:React.FC<{cardDetails:any, cardOrient:string}> = ({cardDetails, cardOrient}) => {
+const CustomCard:React.FC<{cardDetails:any, cardOrient:string, background:number}> = ({cardDetails, cardOrient, background}) => {
 
     let cardImage  = cardDetails.hasOwnProperty('image') ? 
         (
-            <img src={cardDetails.image} alt={cardDetails.title} className="card-img"
-            style={{ width: "120px", height: "120px" }} />
+            <img src={cardDetails.image} alt={cardDetails.title} className="card-img mt-4 mt-md-5 px-4" />
         ) : ("")
 
     let cardContent = (
@@ -51,11 +51,21 @@ const CustomCard:React.FC<{cardDetails:any, cardOrient:string}> = ({cardDetails,
             </div>
         )
     }
-    return(
-        <div className="card">
-            {myCard}
-        </div>
-    )
+
+    if(background === 1){
+        return(
+            <div className="card card-type-1">
+                {myCard}
+            </div>
+        )
+    }
+    else{
+        return(
+            <div className="card card-type-2">
+                {myCard}
+            </div>
+        )
+    }
 }
 
 export default CustomCard;
