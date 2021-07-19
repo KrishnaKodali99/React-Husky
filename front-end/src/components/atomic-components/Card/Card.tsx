@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CustomCard = ({cardDetails, cardOrient}:any):any => {
+const CustomCard:React.FC<{cardDetails:any, cardOrient:string}> = ({cardDetails, cardOrient}) => {
 
     let cardImage  = cardDetails.hasOwnProperty('image') ? 
         (

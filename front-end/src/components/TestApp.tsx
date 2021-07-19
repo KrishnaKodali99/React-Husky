@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import CustomButton from './atomic-components/Button/Button';
 import CustomCard from './atomic-components/Card/Card';
+import LoginForm from './atomic-components/Login-Form/Login-Form';
 
 class TestApp extends Component {
 
     myFunct = ():any => {
         console.log("CLICK");
+    }
+
+    myLoginSubmit = (values: any): any => {
+        console.log(values);
     }
 
     cardDets = {
@@ -21,6 +26,7 @@ class TestApp extends Component {
                 <div className="container">
                     <CustomCard cardDetails = {this.cardDets} cardOrient="center" />
                 </div>
+                <LoginForm loginSubmitHandler={this.myLoginSubmit} />
             </div>
         );
     }
