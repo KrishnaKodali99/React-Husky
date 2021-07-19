@@ -1,7 +1,7 @@
 import React from 'react'
 
 // atomic?
-const NavBar() => {
+const NavBar = () => {
 
     // to do
 

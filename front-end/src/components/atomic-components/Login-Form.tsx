@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LoginForm = ({onSubmit}) => {
+const LoginForm = ({onSubmit}:any):any => {
 
     // to do
     console.log();
