@@ -1,7 +1,8 @@
 import React from 'react';
-import './Card.css';
+import './Card.scss';
+import { LEFT, RIGHT, TOP } from '../../../types/constants';
 
-/*
+/**
 The sizing of the card has to be handled by the parent component
 Sizing option for the image not included
 @params
@@ -14,8 +15,8 @@ const CustomCard:React.FC<{cardDetails:any, cardOrient:string, background:number
 
     let cardImage  = cardDetails.hasOwnProperty('image') ? 
         (
-            <img src={cardDetails.image} alt={cardDetails.title} className="card-img mt-4 mt-md-5 px-4" />
-        ) : ("")
+            <img src={cardDetails.image} alt={cardDetails.title} className="card-img px-4 my-3 my-md-3" />
+        ) : null;
 
     let cardContent = (
         <div className="card-body">
@@ -26,35 +27,45 @@ const CustomCard:React.FC<{cardDetails:any, cardOrient:string, background:number
         
 
     let myCard = null;
-    if(cardOrient.toLowerCase() === "left"){
+    if(cardOrient === LEFT){
         myCard = (
             <div className="row">
-                <div className="col-sm-12 col-md-4">
-                    {cardImage}
-                </div>
-                <div className="col-sm-12 col-md-8">                    
-                    {cardContent}
-                </div>
+                {cardImage === null ? 
+                    (<div className="col">{cardContent}</div>) :
+                    (<>
+                        <div className="col-sm-12 col-md-4">
+                            {cardImage}
+                        </div>
+                        <div className="col-sm-12 col-md-8">                    
+                            {cardContent}
+                        </div>
+                    </>)
+                }                
             </div>
         )
     }
-    else if(cardOrient.toLowerCase() === "right"){
+    else if(cardOrient === RIGHT){
         myCard = (
-            <div className="row">                
-                <div className="col-sm-12 col-md-8">                    
-                    {cardContent}
-                </div>
-                <div className="col-sm-12 col-md-4">
-                    {cardImage}
-                </div>
+            <div className="row">  
+            {cardImage === null ? 
+                (<div className="col">{cardContent}</div>) :
+                (<>
+                    <div className="col-sm-12 col-md-8">                    
+                        {cardContent}
+                    </div>
+                    <div className="col-sm-12 col-md-4">
+                        {cardImage}
+                    </div>
+                </>)
+            }  
             </div>
         )
     }
-    else{
+    else if(cardOrient === TOP){
         myCard = (
             <div className="row"> 
                 <div className="col">
-                    <div>{cardImage}</div>
+                {cardImage === null ? "" : (<div className="mt-4 mt-md-5">{cardImage}</div>)}
                     {cardContent}
                 </div>
             </div>
@@ -63,14 +74,14 @@ const CustomCard:React.FC<{cardDetails:any, cardOrient:string, background:number
 
     if(background === 1){
         return(
-            <div className="card card-type-1">
+            <div className="card card-background-primary">
                 {myCard}
             </div>
         )
     }
     else{
         return(
-            <div className="card card-type-2">
+            <div className="card card-background-secondary">
                 {myCard}
             </div>
         )

@@ -1,0 +1,24 @@
+$color-black: black;
+$card-background-primary: #6D4CC7;
+$card-background-secondary: #571EF0;
+
+.card{
+    color: $color-black;
+    &:hover{
+        transform: scale(1.02, 1.01);
+    }
+}
+
+
+.card-background-primary{
+    background-color: $color-type-1;
+}
+
+.card-background-secondary{
+    background-color: $color-type-2;
+}
+
+.card-img{
+    max-width: 50vh;
+    max-height: 50vh;
+}

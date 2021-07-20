@@ -1,0 +1,53 @@
+$color-white: white;
+$color-black: black;
+
+$success-color: #3E7764;
+$success-hover-color: #79bda6;
+
+$danger-color: #A33F44;
+$danger-hover-color: #d47c81;
+
+$primary-color: #6D4CC7;
+$primary-hover-color: #A185D9;
+
+$secondary-color: #FFA94C;
+$secondary-hover-color: #fff8da;
+
+.btn{
+    color: $color-white;
+    border-radius: 8px;
+    &:hover{
+        color: $color-black;
+        font-weight: 600;
+        transform: scale(1.1, 1.1);
+    }
+}
+
+
+.success-background{
+    background-color: $success-color;    
+    :hover{
+        background-color: $success-hover-color;
+    }
+}
+
+.danger-background{
+    background-color: $danger-color;
+    :hover{
+        background-color: $danger-hover-color;
+    }
+}
+
+.primary-background{
+    background-color: $primary-color;
+    :hover{
+        background-color: $primary-hover-color;
+    }
+}
+
+.secondary-background{
+    background-color: $secondary-color;
+    :hover{
+        background-color: $secondary-hover-color;   
+    }
+}   

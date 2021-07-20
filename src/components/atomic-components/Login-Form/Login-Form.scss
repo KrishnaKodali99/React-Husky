@@ -1,3 +1,6 @@
+$form-background: #2F3543;
+$error-message-color : red;
+
 #form-container{
     position: absolute;
     top: 50%;
@@ -6,12 +9,16 @@
 }
 
 #form-parent-col{
-    background-color: #2F3543;    
+    background-color: $form-background;
     border-radius: 20px;
 }
 
-#loginform{
+#login-form{
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 4%;
+}
+
+.error-message{
+    color: $error-message-color;
 }
