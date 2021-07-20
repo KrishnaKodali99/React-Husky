@@ -3,7 +3,16 @@ import { useFormik } from 'formik';
 import CustomButton from '../Button/Button';
 import './Login-Form.css'
 
-const validate = (values:any) => {
+type ValueType = {
+    email:string,
+    password:string
+}
+
+
+/*
+    Function to validate the form values
+*/
+const validate = (values:ValueType) => {
     const errors = {
         email: '',
         password: ''
@@ -25,6 +34,13 @@ const validate = (values:any) => {
     return errors;
 };
 
+
+/*
+    Formik form that takes email and password from the user
+    Sends input data to parent component
+    @params
+        loginSubmitHandler - Function from parent component that processes input data
+*/
 const LoginForm:React.FC<{loginSubmitHandler:Function}> = ({loginSubmitHandler}) => {
 
     const formik = useFormik({
@@ -33,7 +49,7 @@ const LoginForm:React.FC<{loginSubmitHandler:Function}> = ({loginSubmitHandler})
             password: ''
         },
         validate,
-        onSubmit: (values:any, {resetForm}):any => {
+        onSubmit: (values:ValueType, {resetForm}) => {
             loginSubmitHandler(values)
             resetForm();
         },
@@ -46,8 +62,8 @@ const LoginForm:React.FC<{loginSubmitHandler:Function}> = ({loginSubmitHandler})
                     <h1 className="pb-3">Login Form</h1>
 
                     <form onSubmit={formik.handleSubmit} id="loginform" >
-                        <div className="row my-3 mx-2">
-                            <label className="col-lg-3" htmlFor="email">Email :</label>
+                        <div className="row my-3">
+                            <label className="col-lg-3" htmlFor="email">Email</label>
                             <input id="email" name="email" type="email" className="col-sm-12 col-lg-9"
                                 onChange={formik.handleChange} onBlur={formik.handleBlur}
                                 value={formik.values.email}
@@ -55,9 +71,9 @@ const LoginForm:React.FC<{loginSubmitHandler:Function}> = ({loginSubmitHandler})
                             {formik.touched.email && formik.errors.email ? (<div>{formik.errors.email}</div>) : null}
                         </div>
                         
-                        <div className="row py-2 mx-2">
-                            <label className="col-lg-3" htmlFor="password">Password :</label>
-                            <input id="password" name="password" type="password" className="col-lg-9"
+                        <div className="row py-2">
+                            <label className="col-lg-3" htmlFor="password">Password</label>
+                            <input id="password" name="password" type="password" className="col-lg-9 mb-3"
                                 onChange={formik.handleChange} onBlur={formik.handleBlur}
                                 value={formik.values.password}
                             />

@@ -1,10 +1,17 @@
-#card-container{
+#form-container{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
 
 #form-parent-col{
-    background-color: #FFA94C;
+    background-color: #2F3543;    
+    border-radius: 20px;
+}
+
+#loginform{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 4%;
 }

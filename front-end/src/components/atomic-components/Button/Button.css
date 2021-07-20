@@ -1,16 +1,38 @@
 .btn{
     color:white;
+    border-radius: 8px;
 }
-
 .btn:hover{
-    color:yellow;
+    color:black;
     font-weight: 600;
+    transform: scale(1.1, 1.1);
+    transition-duration: 60s;
 }
 
 .success-background{
     background-color: #3E7764;
 }
+.success-background:hover{
+    background-color: #79bda6;
+}
 
 .danger-background{
     background-color: #A33F44;
+}
+.danger-background:hover{
+    background-color: #d47c81;
+}
+
+.primary-background{
+    background-color: #6D4CC7;
+}
+.primary-background:hover{
+    background-color: #A185D9;
+}
+
+.secondary-background{
+    background-color: #FFA94C;
+}
+.secondary-background:hover{
+    background-color: #fff8da;
 }

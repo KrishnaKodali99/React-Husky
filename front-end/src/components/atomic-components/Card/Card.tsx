@@ -1,6 +1,15 @@
 import React from 'react';
 import './Card.css';
 
+/*
+The sizing of the card has to be handled by the parent component
+Sizing option for the image not included
+@params
+    cardDetails - Object that contains {image, title, body}. Only title is required, image & body are optional
+    cardOrient - Positioning of the image inside the card - left / top / right
+    background - One out of the two background color options
+*/
+
 const CustomCard:React.FC<{cardDetails:any, cardOrient:string, background:number}> = ({cardDetails, cardOrient, background}) => {
 
     let cardImage  = cardDetails.hasOwnProperty('image') ? 

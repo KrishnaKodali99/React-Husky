@@ -2,6 +2,10 @@
     color:black;
 }
 
+.card:hover{
+    transform: scale(1.02, 1.02);
+}
+
 .card-type-1{
     background-color: #6D4CC7;
 }
