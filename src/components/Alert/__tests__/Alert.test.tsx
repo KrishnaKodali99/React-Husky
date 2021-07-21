@@ -21,4 +21,9 @@ describe(("Testing <Alert />"), () => {
         render(<Alert type="test-alert" message="test alert message"/>)
         screen.getByText(/alert not working/i)
     })
+
+    test(("Testing any other alert random message"), () => {
+        render(<Alert type="test-alert-random" message="test alert random message"/>)
+        screen.getByText(/alert not working/i)
+    })
 })
