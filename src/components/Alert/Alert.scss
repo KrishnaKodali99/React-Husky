@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+$color-white: #ffffff;
+$red-1: #A33F44;
+$red-2: #d77378;
+$green-1: #3E7764;
+$green-2: #87bbaa;
+$grey-1: #566686;
+$grey-2: #a0aecb;
+
+.alert-danger {
+    background-color: $red-1;
+    border-color: $red-2;
+}
+ 
+.alert-info {
+    background-color: $grey-1;
+    border-color: $grey-2;
+}
+
+.alert-success {
+    background-color: $green-1;
+    border-color: $green-2;
+}
+
+.alert-success, .alert-danger, .alert-info {
+    color: $color-white;
+    font-family: 'Comfortaa', cursive;
+    opacity: 0.8;
+    margin: 8 px;
+    transition-duration: 1s;
+    &:hover {
+        transform: scale(1, 1.05);
+        opacity: 1;
+    }
+}
